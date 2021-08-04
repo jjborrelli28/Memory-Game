@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poiret+One&amp;display=swap" rel="stylesheet">
+        <title>Memory Game</title>
+    </head>
+    <body>
+        <header>
+        <div class="container">
+            <h1>Memory Game</h1>
+            <div class="console">
+                <div class="level">
+                    <button id="btnEasy" class="btnsLevels">EASY</button>
+                    <button id="btnMedium" class="btnsLevels modoOn">MEDIUM</button>
+                    <button id="btnHard" class="btnsLevels">HARD</button>
+                </div>
+                <div class="message"></div>
+                <div class="line"></div>
+                <button class="btnStartReset gaming">START</button>            
+                </div>
+                <div class="line"></div>
+                <div class="circles">            
+                <div id="yellow" accessKey="1" class="select">1</div>
+                <div id="blue" accessKey="2" class="select" style="opacity: 0.05;"></div>
+                <div id="red" accessKey="4" class="select" style="opacity: 0.05;"></div>
+                <div id="green" accessKey="3" class="select" style="opacity: 0.05;"></div>
+                </div>                   
+        </div>
+        </header>
+        <footer>By Juan Jose Borrelli - Copyright ©:</footer>
+        <script src="script.js"></script>
+    </body>
+</html>
