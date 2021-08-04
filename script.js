@@ -12,27 +12,27 @@ const message = document.querySelector(".message");
 
 let level = 1;
 let sequence = [];
-let timer = 500;
-let setTimer = 500;
 let select = [];
 let index = 0;
+let timer = 500;
+let setTimer = 500;
 
 // Eventos iniciales
-btnStartReset.addEventListener("click", startGame);
+btnStartReset.addEventListener("click", startResetGame);
 btnEasy.addEventListener("click", easyMode);
 btnMedium.addEventListener("click", mediumMode);
 btnHard.addEventListener("click", hardMode);
 
 // Funciones para agregar y eliminar los eventos
 function addEvents() {
-  btnStartReset.addEventListener("click", startGame);
+  btnStartReset.addEventListener("click", startResetGame);
   circles.addEventListener("click", pick);
   btnEasy.addEventListener("click", easyMode);
   btnMedium.addEventListener("click", mediumMode);
   btnHard.addEventListener("click", hardMode);
 }
 function removeEvents() {
-  btnStartReset.removeEventListener("click", startGame);
+  btnStartReset.removeEventListener("click", startResetGame);
   circles.removeEventListener("click", pick);
   btnEasy.removeEventListener("click", easyMode);
   btnMedium.removeEventListener("click", mediumMode);
@@ -49,13 +49,34 @@ function sequenceGenerator() {
   return sequence;
 }
 
-// Función para comenzar el juego
+// Función para iniciar el juego
 function startGame() {
   index = 0;
-  setTimer = timer;
   message.textContent = `LEVEL ${level}`;
+  switch (timer) {
+    case 250:
+      setTimer = 250;
+      break;
+    case 500:
+      setTimer = 500;
+      break;
+    case 750:
+      setTimer = 750;
+      break;
+    default:
+      // No hay default
+      break;
+  }
   sequenceGenerator();
   showSequence();
+}
+
+// Función para resetear el juego
+function startResetGame() {
+  level = 1;
+  sequence = [];
+  select = [];
+  startGame();
 }
 
 // Función para mostrar secunencia
@@ -133,10 +154,10 @@ function easyMode() {
   btnHard.classList.remove("modoOn");
   level = 1;
   sequence = [];
-  timer = 750;
-  setTimer = 750;
   select = [];
   index = 0;
+  timer = 750;
+  setTimer = 750;
 }
 function mediumMode() {
   this.classList.add("modoOn");
@@ -145,10 +166,10 @@ function mediumMode() {
   btnEasy.classList.remove("modoOn");
   level = 1;
   sequence = [];
-  timer = 500;
-  setTimer = 500;
   select = [];
   index = 0;
+  timer = 500;
+  setTimer = 500;
 }
 function hardMode() {
   this.classList.add("modoOn");
@@ -157,10 +178,10 @@ function hardMode() {
   btnEasy.classList.remove("modoOn");
   level = 1;
   sequence = [];
-  timer = 250;
-  setTimer = 250;
   select = [];
   index = 0;
+  timer = 250;
+  setTimer = 250;
 }
 
 // Función de derrota
